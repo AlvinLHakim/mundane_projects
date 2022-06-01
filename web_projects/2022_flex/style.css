@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#parent{
+    margin: 5px;
+    display: flex;
+    border: 1px solid;
+}
+
+.kotak, .kotak2, .kotak3{
+    margin: 5px;
+    height: 50px;
+    width: 50px;
+}
+
+.kotak{
+    background-color: red;
+}
+
+.kotak2{
+    background-color: black;
+    order: -1;
+    display: flex;
+}
+
+.kotak3{
+    background-color: grey;
+}
