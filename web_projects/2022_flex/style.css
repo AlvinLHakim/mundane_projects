@@ -28,3 +28,11 @@
 .kotak3{
     background-color: grey;
 }
+
+@media only screen and (max-width: 600px){
+    #parent{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+    }
+}
