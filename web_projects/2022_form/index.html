@@ -5,49 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Biasa</title>
-    <!-- JS -->
-    <!-- <script defer src="script.js"></script> -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<<<<<<< HEAD
-    
-=======
     <div id="error"></div>
+
+   <div id="form-div">
     <form id="form">
         <h1>A form, I guess</h1>
         <label for="username">Username</label><br>
         <input type="text" id="username"><br>
+        <span id="user-error"></span>
         <br>
         <label for="email-address">Email</label><br>
-        <input type="email" id="email-address">
+        <input type="email" id="email-address"><br>
+        <span id="email-error"></span>
         <br>
         <button id="submit-btn">Enter</button>
     </form>
+   </div>
 
       <!-- Javascript -->
       <script>
           const username = document.getElementById("username");
           const emailAddress = document.getElementById("email-address");
           const submitBtn = document.getElementById("submit-btn");
+
           const validate = (e) => {
               e.preventDefault();
 
             //   If the form is left empty by username
               if(username.value === ""){
-                  alert("Please insert username");
+                  document.getElementById("user-error").innerHTML = "Please insert your username";
                   username.focus();
                   return false;
               }
               if(emailAddress.value === ""){
-                  alert("Please insert email address");
+                  document.getElementById("email-error").innerHTML = "Please insert your email address";
                   emailAddress.focus();
                   return false;
               }
-              return true;
+              return true; //Can submit the form data to the server
+          }
+
+          const emailIsValid = email => {
+              return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
           }
 
           submitBtn.addEventListener('click', validate);
       </script>
->>>>>>> form-v2
 </body>
 </html>
