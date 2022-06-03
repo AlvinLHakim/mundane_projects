@@ -13,6 +13,11 @@
     margin: 5px;
     height: 50px;
     width: 50px;
+    transition: .2s;
+}
+
+.kotak:hover, .kotak2:hover, .kotak3:hover{
+    background-color: aqua;
 }
 
 .kotak{
@@ -27,6 +32,18 @@
 
 .kotak3{
     background-color: grey;
+}
+
+.text{
+    position: relative;
+    display: grid;
+    place-items: center;
+    transition: 0.2s;
+}
+
+.text:hover{
+    color: white;
+    background-color: black;
 }
 
 @media only screen and (max-width: 600px){
