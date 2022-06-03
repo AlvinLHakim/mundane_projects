@@ -10,16 +10,41 @@
 </head>
 <body>
     <div id="error"></div>
-    <form action="/" id="form">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" id="name">
-            <br>
-            <label for="email">Email</label>
-            <input type="email" id="email">
-            <br>
-            <button type="submit">Kirim</button>
-        </div>
+    <form id="form">
+        <h1>A form, I guess</h1>
+        <label for="username">Username</label><br>
+        <input type="text" id="username"><br>
+        <br>
+        <label for="email-address">Email</label><br>
+        <input type="email" id="email-address">
+        <br>
+        <button id="submit-btn">Enter</button>
     </form>
+
+      <!-- Javascript -->
+      <script>
+          const username = document.getElementById("username");
+          const emailAddress = document.getElementById("email-adress");
+          const submitBtn = document.getElementById("submit-btn");
+
+          let userError = document.getElementById("username-error");
+
+          const validate = (e) => {
+              e.preventDefault();
+
+            //   If the form is left empty by username
+              if(username.value === ""){
+                  alert("Please insert username");
+                  return false;
+              }
+              if(emailAddress.value === ""){
+                  alert("Please insert email address");
+                  return false;
+              }
+              return true;
+          }
+
+          submitBtn.addEventListener('click', validate);
+      </script>
 </body>
 </html>
