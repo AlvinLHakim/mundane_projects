@@ -24,21 +24,20 @@
       <!-- Javascript -->
       <script>
           const username = document.getElementById("username");
-          const emailAddress = document.getElementById("email-adress");
+          const emailAddress = document.getElementById("email-address");
           const submitBtn = document.getElementById("submit-btn");
-
-          let userError = document.getElementById("username-error");
-
           const validate = (e) => {
               e.preventDefault();
 
             //   If the form is left empty by username
               if(username.value === ""){
                   alert("Please insert username");
+                  username.focus();
                   return false;
               }
               if(emailAddress.value === ""){
                   alert("Please insert email address");
+                  emailAddress.focus();
                   return false;
               }
               return true;
