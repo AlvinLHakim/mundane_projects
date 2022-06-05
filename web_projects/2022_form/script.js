@@ -1,14 +1,28 @@
-const  name = document.getElementById('name');
-const  email = document.getElementById('email');
-const form = document.getElementById('form');
-const errorElement = document.getElementById('error');
+const username = document.getElementById('username');
+const email = document.getElementById('email-address');
+const  submit = document.getElementById('submit-btn');
 
-// Mencegah untuk submit
-form.addEventListener('submit', (e) => {
-    let messages = []
-    if (name.value === '' || name.value == null){
-        messages.push('Mohon masukkan nama Anda')
+const validate = (e) => {
+    e.preventDefault();
+
+    // If username input is left empty, the form will be invalid
+    if(username.value ===""){
+        document.getElementById('username').innerHTML = "Please insert your username.";
+        username.focus();
+        return false;
     }
+    
+    // If email input is left empty, the form will be invalid
+    if(email.value===""){
+        document.getElementById('email-address').innerHTML = "Please insert your email address.";
+        email.focus();
+        return false;
+    }
+    return true; //Can submit form to the server
+}
 
-    e.preventDefault()
-})
+const emailIsValid = emai => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+submit.addEventListener('click', validate);
