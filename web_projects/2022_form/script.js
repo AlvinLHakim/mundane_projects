@@ -10,19 +10,19 @@ const validate = (e) => {
         document.getElementById('username').innerHTML = "Please insert your username.";
         username.focus();
         return false;
-    }
+    } 
     
     // If email input is left empty, the form will be invalid
-    if(email.value===""){
-        document.getElementById('email-address').innerHTML = "Please insert your email address.";
-        email.focus();
-        return false;
-    }
+    // if(email.value===""){
+    //     document.getElementById('email-address').innerHTML = "Please insert your email address.";
+    //     email.focus();
+    //     return false;
+    // }
     return true; //Can submit form to the server
 }
 
-const emailIsValid = emai => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+// const emailIsValid = email => {
+//     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+// }
 
 submit.addEventListener('click', validate);
